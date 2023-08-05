@@ -1,0 +1,71 @@
+body{
+    display:flex;
+    flex-direction: column;
+    gap:1rem;
+    align-content: center;
+    background-color: lightcyan;
+}
+.a{
+    height: 150px;
+    width:150px;
+    border:1px solid;
+    background-color: dodgerblue;
+    display:grid;
+    place-content: center;
+    position: center;
+    margin: auto;
+    transform:translateX(-50%);
+    margin-top: 4rem;
+}
+.b{
+    height: 150px;
+    width:150px;
+    border:1px solid;
+    background-color: pink;
+    display:grid;
+    place-content: center;
+    margin: auto;
+    transform:translateY(-2rem);
+}
+.c{
+    height: 150px;
+    width:150px;
+    border:1px solid;
+    background-color: lavender;
+    display:grid;
+    place-content: center;
+    margin: auto;
+    transform:translate(50%,-4rem);
+}
+.a:hover{
+    background-color: crimson;
+    transform:translateX(0%);                  /*translate works from original position of the div box*/
+    transition-property: background-color, transform;
+    transition-timing-function:ease-in-out;
+    transition-duration: 1s;
+    transition-delay: 0.5s;
+}
+.c:hover{
+    animation-name:slide;
+    animation-delay: 0.5s;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 4;
+    animation-fill-mode:backwards;
+    animation-direction: normal;
+    cursor: pointer;
+}
+@keyframes slide{
+    0%{
+        transform: translateX(0);
+    }
+    33%{
+        transform: translateX(600px);
+    }
+    66%{
+        transform:translateX(-600px);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
